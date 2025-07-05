@@ -3,21 +3,21 @@
 using namespace std;
 
 int main() {
-    int x;
+    int matrix[5][5];
     int row, col;
 
-    for (int i = 0; i < 5; ++i) {
-        for (int j = 0; j < 5; ++j) {
-            cin >> x;
-            if (x == 1) {
-                row = i;
-                col = j;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            cin >> matrix[i][j];
+            if (matrix[i][j] == 1) {
+                row = i + 1; // 1-based index
+                col = j + 1;
             }
         }
     }
 
-    // Manhattan distance to center (2,2) in 0-based indexing
-    cout << abs(row - 2) + abs(col - 2) << endl;
+    int moves = abs(row - 3) + abs(col - 3);
+    cout << moves << endl;
 
     return 0;
 }
